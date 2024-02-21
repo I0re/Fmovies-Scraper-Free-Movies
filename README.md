@@ -1,5 +1,7 @@
 # Fmovies Scraper
 
+The Chrome Browser Version this was tested on is '121.0.6167.185 (Official Build) (64-bit)'.
+
 ## Purpose
 
 The purpose of this script is to automate the process of downloading movies and series from the fmovies.co website. It utilizes web scraping techniques with Selenium and the lackey framework to interact with the website programmatically.

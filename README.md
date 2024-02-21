@@ -24,7 +24,7 @@ Press the image to watch the demo video.
 1. Clone the repository to your local machine:
 
  ```bash
-   https://github.com/I0re/Fmovies-Scrapper-Free-Movies.git
+   https://github.com/I0re/Fmovies-Scraper-Free-Movies.git
  ```
 
 2. Install the required dependencies using pip:

@@ -27,7 +27,7 @@ def scrape_fmovies(search_query):
     # Load the search URL
     driver.get(search_url)
 
-    # Wait for the content to be fully loaded (you can adjust the time if needed)
+    # Wait for the content to be fully loaded
     time.sleep(5)
 
     # Get the page source after waiting
@@ -96,7 +96,7 @@ def scrape_fmovies(search_query):
                     print("Clicked on the 'server' button.")
                     time.sleep(10)
 
-                    # Get the directory of the current script
+                    # Get the current directory
                     current_directory = os.path.dirname(os.path.realpath(__file__))
 
                     # Construct the full path to the image files
@@ -122,15 +122,14 @@ def scrape_fmovies(search_query):
                     cococut_button.click()
                     time.sleep(4)
 
-                    # Find and click on the force download button
+                    # Find and click on the force download button within CocoCut extension
                     force_download_button = screen.find(pattern3)
                     force_download_button.click()
                     time.sleep(4)
 
                     # Define the save selector to wait for
                     save_selector = (By.ID, 'dlVsaveBtn')
-
-                    # Wait indefinitely until the selector is present on the page
+                    
                     try:
                         # Wait indefinitely for the element to be visible
                         element = WebDriverWait(driver, 10800).until(EC.visibility_of_element_located(save_selector))
@@ -140,9 +139,9 @@ def scrape_fmovies(search_query):
                         print("Clicked on the element with ID 'dlVsaveBtn'.")
                         time.sleep(3)
 
-                        # Handle the file dialog
+                        # Handle the file dialog Enter key to save
                         alert = driver.switch_to.alert
-                        alert.send_keys(Keys.RETURN)  # Press Enter to accept the dialog
+                        alert.send_keys(Keys.RETURN)
                         print("Pressed Enter to save the file.")
 
                     except Exception as e:
@@ -157,7 +156,7 @@ def scrape_fmovies(search_query):
                 print("Invalid choice.")
         else:
             # Handle series selection
-            print("Series selection not yet implemented. Try pressing 1")
+            print("Series selection not yet implemented. Try pressing 1. Restarting...")
 
     else:
         print("Could not find 'resdata' div")
